@@ -8,6 +8,7 @@ const Todos = () => {
   const { todos, dispatch } = useContext(TodoContext);
 
   return (
+    <div>
     <ListGroup className="mt-5 mb-2 items">
       {todos.map(todo => (
         <ListGroupItem key={todo.id}>
@@ -26,6 +27,7 @@ const Todos = () => {
         </ListGroupItem>
       ))}
     </ListGroup>
+    </div>
   );
 };
 
