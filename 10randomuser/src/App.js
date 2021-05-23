@@ -30,6 +30,7 @@ useEffect(() =>{
           <MyCard details={details} />
         </Col>
       </Row>
+      <Button className="offset-md-4 mt-4" style={{marginLeft:"47%"}} onClick={fetchDetails}> Click Me </Button>
     </Container>
   );
 }
