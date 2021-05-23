@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react"
-import {Container, Row, Col} from "reactstrap"
+import {Container, Row, Col, Button} from "reactstrap"
 
 import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css';
+import MyCard from "./MyCard"
 
 import Axios from "axios"
 
@@ -15,7 +16,7 @@ const fetchDetails = async() =>{
   console.log("RESPONSE: ", data);
 
   const details = data.results[0]
-  setDetails(details)
+  setDetails(details) 
 };
 
 useEffect(() =>{
@@ -23,21 +24,13 @@ useEffect(() =>{
 }, [])
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fluid className="p-4 bg-priary App">
+      <Row>
+        <Col md={4} className="offset-md-4 mt-4">
+          <MyCard details={details} />
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
