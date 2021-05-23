@@ -11,7 +11,11 @@ function App() {
 
 const fetchDetails = async() =>{
   const response = await Axios.get('https://randomuser.me/api/')
-  console.log("RESPONSE: ", response);
+  const data = response.data
+  console.log("RESPONSE: ", data);
+
+  const details = data.results[0]
+  setDetails(details)
 };
 
 useEffect(() =>{
